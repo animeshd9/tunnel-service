@@ -3,10 +3,14 @@ const localtunnel = require('../localtunnel');
 // Get token from command line arguments
 const args = process.argv.slice(2); // Get command line arguments excluding node executable and script name
 let token = '';
+let port = '';
 
 args.forEach(arg => {
   if (arg.startsWith('--token=')) {
     token = arg.split('=')[1];
+  }
+  if ( arg.startsWith('--port=')) {
+    port = arg.split('=')[1]
   }
 });
 if (!token) {
@@ -16,9 +20,8 @@ if (!token) {
 
 (async () => {
   const tunnel = await localtunnel({
-    port: 8080,
+    port: port,
     host: 'http://setside.io',
-    subdomain: 'editor',
     token: token // Set the token obtained from command line argument
   }).catch(err => {
     console.log(err);
