@@ -3,15 +3,15 @@ const localtunnel = require('../localtunnel');
 // Get token from command line arguments
 const args = process.argv.slice(2); // Get command line arguments excluding node executable and script name
 let token = '';
-let port = '';
+let port = 3333;
 
 args.forEach(arg => {
   if (arg.startsWith('--token=')) {
     token = arg.split('=')[1];
   }
-  if ( arg.startsWith('--port=')) {
-    port = arg.split('=')[1]
-  }
+  // if ( arg.startsWith('--port=')) {
+  //   port = arg.split('=')[1]
+  // }
 });
 if (!token) {
   console.error('Please provide a valid token using --token={your_token}');
