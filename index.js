@@ -1,4 +1,4 @@
-const localtunnel = require('../localtunnel');
+const localtunnel = require('./localtunnel');
 
 // Get token from command line arguments
 const args = process.argv.slice(2); // Get command line arguments excluding node executable and script name
