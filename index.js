@@ -1,9 +1,10 @@
 const localtunnel = require('./localtunnel');
-
+require('dotenv').config()
 // Get token from command line arguments
 const args = process.argv.slice(2); // Get command line arguments excluding node executable and script name
-let token = '';
-let port = 3333;
+let token = process.env.TOKEN;
+let port = process.env.PORT;
+console.log('---port:',port,'---')
 
 args.forEach(arg => {
   if (arg.startsWith('--token=')) {
