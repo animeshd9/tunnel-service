@@ -4,6 +4,7 @@ require('dotenv').config()
 const args = process.argv.slice(2); // Get command line arguments excluding node executable and script name
 let token = process.env.TOKEN;
 let port = process.env.PORT;
+console.log(token)
 console.log('---port:',port,'---')
 
 args.forEach(arg => {
